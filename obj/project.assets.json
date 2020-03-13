@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\romam\\Desktop\\repository\\microsoft.botsay\\microsoft.botsay.csproj",
+      "projectUniqueName": "C:\\Users\\romam\\Desktop\\zipper\\Gzipstream_veeam\\microsoft.botsay.csproj",
       "projectName": "microsoft.botsay",
-      "projectPath": "C:\\Users\\romam\\Desktop\\repository\\microsoft.botsay\\microsoft.botsay.csproj",
+      "projectPath": "C:\\Users\\romam\\Desktop\\zipper\\Gzipstream_veeam\\microsoft.botsay.csproj",
       "packagesPath": "C:\\Users\\romam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\romam\\Desktop\\repository\\microsoft.botsay\\obj\\",
+      "outputPath": "C:\\Users\\romam\\Desktop\\zipper\\Gzipstream_veeam\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\romam\\AppData\\Roaming\\NuGet\\NuGet.Config",
