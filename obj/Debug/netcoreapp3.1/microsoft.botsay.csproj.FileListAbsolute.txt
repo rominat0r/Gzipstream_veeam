@@ -9,3 +9,17 @@ C:\Users\romam\Desktop\repository\microsoft.botsay\obj\Debug\netcoreapp3.1\micro
 C:\Users\romam\Desktop\repository\microsoft.botsay\obj\Debug\netcoreapp3.1\microsoft.botsay.AssemblyInfo.cs
 C:\Users\romam\Desktop\repository\microsoft.botsay\obj\Debug\netcoreapp3.1\microsoft.botsay.dll
 C:\Users\romam\Desktop\repository\microsoft.botsay\obj\Debug\netcoreapp3.1\microsoft.botsay.pdb
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\bin\Debug\netcoreapp3.1\microsoft.botsay.exe
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\bin\Debug\netcoreapp3.1\microsoft.botsay.deps.json
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\bin\Debug\netcoreapp3.1\microsoft.botsay.runtimeconfig.json
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\bin\Debug\netcoreapp3.1\microsoft.botsay.runtimeconfig.dev.json
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\bin\Debug\netcoreapp3.1\microsoft.botsay.dll
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\bin\Debug\netcoreapp3.1\microsoft.botsay.pdb
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\bin\Debug\netcoreapp3.1\Microsoft.VisualBasic.dll
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\bin\Debug\netcoreapp3.1\System.Management.dll
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\obj\Debug\netcoreapp3.1\microsoft.botsay.csprojAssemblyReference.cache
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\obj\Debug\netcoreapp3.1\microsoft.botsay.AssemblyInfoInputs.cache
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\obj\Debug\netcoreapp3.1\microsoft.botsay.AssemblyInfo.cs
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\obj\Debug\netcoreapp3.1\microsoft.botsay.csproj.CopyComplete
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\obj\Debug\netcoreapp3.1\microsoft.botsay.dll
+C:\Users\romam\Desktop\zipper\Gzipstream_veeam\obj\Debug\netcoreapp3.1\microsoft.botsay.pdb

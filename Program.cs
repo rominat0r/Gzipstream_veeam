@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Reflection;
-
+using Microsoft.VisualBasic.Devices;
+using System.Management;
 
 namespace microsoft.botsay
 {
@@ -45,15 +46,15 @@ namespace microsoft.botsay
                 {
                     sDir = argv[1];
                     sCompressedFile = argv[2];
-                    SplitFile(directoryPath + @"\" + sDir, Convert.ToInt32(5));
-                    DirectoryInfo di = Directory.CreateDirectory(directoryPath + @"\" + sCompressedFile);
-                    foreach (var packet in Packets)
-                    {
-                        FileInfo directorySelected = new FileInfo(directoryPath + @"\" + packet.ToString());
-                        Compress(directorySelected, sCompressedFile);
-                        File.Move(directoryPath + @"\" + packet.ToString() + ".gz", directoryPath + @"\" + sCompressedFile + @"\" + packet.ToString() + ".gz");
-                        File.Delete(directoryPath + @"\" + packet.ToString());
-                    }
+                    SplitFile(directoryPath + @"\" + sDir, Convert.ToInt32(2));
+                  //  DirectoryInfo di = Directory.CreateDirectory(directoryPath + @"\" + sCompressedFile);
+                    //foreach (var packet in Packets) 
+                    //{
+                    //    FileInfo directorySelected = new FileInfo(directoryPath + @"\" + packet.ToString());
+                    //    Compress(directorySelected, sCompressedFile);
+                    //    File.Move(directoryPath + @"\" + packet.ToString() + ".gz", directoryPath + @"\" + sCompressedFile + @"\" + packet.ToString() + ".gz");
+                    //    File.Delete(directoryPath + @"\" + packet.ToString());
+                    //}
                 }
                 else if (sCommand == "decompress")
                 {
@@ -141,24 +142,50 @@ namespace microsoft.botsay
                     string baseFileName = Path.GetFileNameWithoutExtension(SourceFile);
                     string Extension = Path.GetExtension(SourceFile);
 
-                    FileStream outputFile = new FileStream(Path.GetDirectoryName(SourceFile) + "\\" + baseFileName + "." +
-                        i.ToString().PadLeft(5, Convert.ToChar("0")) + Extension + ".tmp", FileMode.Create, FileAccess.Write);
+                    //FileStream outputFile = new FileStream(Path.GetDirectoryName(SourceFile) + "\\" + baseFileName + "." +
+                    //    i.ToString().PadLeft(5, Convert.ToChar("0")) + Extension + ".tmp", FileMode.Create, FileAccess.Write);
 
                     mergeFolder = Path.GetDirectoryName(SourceFile);
 
                     int bytesRead = 0;
                     byte[] buffer = new byte[SizeofEachFile];
-
+                    
+                    
                     if ((bytesRead = fs.Read(buffer, 0, SizeofEachFile)) > 0)
                     {
-                        outputFile.Write(buffer, 0, bytesRead);
 
+                        // outputFile.Write(buffer, 0, bytesRead);
+                        Stream bytestream = new MemoryStream(buffer);
+                        using (FileStream compressedFileStream = File.Create(directoryPath + @"\" + i+"testname" + ".gz"))
+                        {
+                            ulong compmem = new ComputerInfo().AvailablePhysicalMemory;
 
+                           
+                           
+                            using (GZipStream compressionStream = new GZipStream(compressedFileStream,
+                               CompressionMode.Compress))
+                            {
+                                double dProgress = ((double)compressedFileStream.Length / bytesRead) * 100;
+                                
+                                do
+                                {
+                                    bytestream.CopyTo(compressionStream);
+                                    Console.WriteLine(dProgress);
+                                }
+                                while (dProgress == 100);
+                                
+                                //Console.WriteLine(compressedFileStream.Length.ToString());
+                                
+                            }
+
+                        }
                         string packet = baseFileName + "." + i.ToString().PadLeft(5, Convert.ToChar("0")) + Extension.ToString() + ".tmp";
+                        //FileInfo directorySelected = new FileInfo(directoryPath + @"\" + packet.ToString());
+                        //Compress(directorySelected, 'outputfold');
                         Packets.Add(packet);
                     }
 
-                    outputFile.Close();
+                   
 
                 }
                 fs.Close();
